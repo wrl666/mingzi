@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>猜数字</title>
+</head>
+<body>
+<script type="text/javascript">
+	// 猜数字
+	// 1.生成一个100以内的随机数
+	var r = parseInt(Math.random()*100);
+
+	do{
+		var input = prompt('请输入一个0-99的数字');
+		if(input>r){
+			alert("笨蛋输入太大了");
+		}
+		else if(input<r){
+			alert("笨蛋，又小了");}
+		else{
+			alert("终于对了！");
+		}
+
+		
+
+
+	}while(input != r);
+	alert('游戏结束')
+</script>
+	
+</body>
+</html>

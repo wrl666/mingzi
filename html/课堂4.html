@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var a = '3.1416';
+		var b = 7;
+		//var d = "a"+'c';
+		var c = a + b;//3.14167
+		var d = 7 + a;//73.1416
+		var e = b +'';
+		var g = '123abc';
+		// var g = 'sef223njfb';
+		// var h = parseInt(g);
+		var h = parseInt('AF',16);
+		document.write('g转换成number='+ h + '<br>');
+		var color = 6;
+		color_x = ''+ color + 6;
+		var w = '500';
+		w = parseInt(w);
+		w = w + 50;
+		var str = color.toString(16)//tostring想把谁转换，就谁.tostring 
+		document.write('6+6转换成'+ color_x + '<br>');
+		document.write('w转换成w='+ w + '<br>');
+		document.write('10转换成二进制='+ str + '<br>');
+
+
+		var strTonum = parseInt('abc');
+		if (isNAN(strTonum)){
+			alert('strTonum是NaN');
+		}
+
+	</script>
+	
+</body>
+</html>

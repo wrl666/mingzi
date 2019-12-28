@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="/public/css/1.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/lunbo.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/muban.css">
+
+</head>
+<body>
+    <div id="all">
+        <div id="head">
+        </div>
+        <div id="name">汪小疯BLOG</div>
+        <div id="nav">
+            <ul>
+                <li><a href="#">首页</a></li>
+                <li><a href="#">分类</a></li>
+               <!--  {% for category in site.categories %}
+                <li><a href="#">{{category | first}}</a></li>
+                {% endfor %} -->
+                <li><a href="#">分享</a></li>
+                <li><a href="#">随笔</a></li>
+                <li><a href="#">留言</a></li>
+            </ul>
+        </div>
+        <div class="calendar-container">
+            <div class="calendar-header">
+                <div class="left btn">&lt;</div>
+                <div class="year"></div>
+                <div class="right btn">&gt;</div>
+            </div>
+            <div class="calendar-body">
+                <div class="week-row">
+                    <div class="week box">日</div>
+                    <div class="week box">一</div>
+                    <div class="week box">二</div>
+                    <div class="week box">三</div>
+                    <div class="week box">四</div>
+                    <div class="week box">五</div>
+                    <div class="week box">六</div>
+                </div>
+                <div class="day-rows">
+                    <!--日期的渲染的地方-->
+                </div> 
+            </div>
+        </div>
+        <div id="content">
+            <div id="lunbo">
+                <img id="tu" src="/public/img/1.jpg">
+                <div class="dian">
+                    <div class="dian1" onclick="go(0)" active></div>
+                    <div class="dian1" onclick="go(1)"></div>
+                    <div class="dian1" onclick="go(2)"></div>
+                    <div class="dian1" onclick="go(3)"></div>
+                </div>
+            </div>
+            {{content}}
+        </div>
+        <!-- <div id="fenye">
+            <a href="" class="left">previous</a>
+            <a href="" class="right">next</a>
+        </div> -->
+       
+        </div>
+    <script type="text/javascript" src="/public/js/calendar.js"></script>
+    <script type="text/javascript" src="/public/js/name.js"></script>
+    <script type="text/javascript" src="/public/js/lunbo.js"></script>
+</body>
+</html>

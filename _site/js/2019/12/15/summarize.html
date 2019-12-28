@@ -1,0 +1,30 @@
+<p>数组 递归函数</p>
+
+<p>##h2 数组：（数组最后的逗号会自动省略）
+定义数组：
+1.var list = [];
+2.var list = new Array()</p>
+
+<p>遍历数组：for循环</p>
+
+<p>数组可省略元素：var list = [1,,,,,,2]</p>
+
+<p>稀疏数组：
+list.forEach(function (value,key) {
+console.dir(key,value); 
+});</p>
+
+<p>删除数组元素：
+1.delete 索引序号不会改变
+2.list.splice(起始位置，删除个数)</p>
+
+<p>添加元素：list.splice(开始位置，删除个数设为0，添加的元素)</p>
+
+<p>清空数组：
+1.list.length=0
+2.list.splice(0,list.length);
+3.list = []此方法为替代数组，不是清空</p>
+
+<p>##h2 递归函数
+自己调用自己
+函数的每一次调用都是一个独立全新的空间</p>

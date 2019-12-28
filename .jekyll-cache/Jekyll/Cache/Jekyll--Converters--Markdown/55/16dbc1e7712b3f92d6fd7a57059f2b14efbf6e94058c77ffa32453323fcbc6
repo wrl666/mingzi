@@ -1,0 +1,20 @@
+I"I<p>渐变  过渡 transfrom  动画</p>
+
+<p>渐变：线性渐变、径向渐变、重复渐变repeating</p>
+
+<p>过渡transition：过渡只能对具有具体数值的属性起作用</p>
+
+<p>使用@keyframes创建动画：0%为动画开头，100%为动画结尾</p>
+
+<p>transform：旋转rorate、倍数设定scale、平移translate、origin设置旋转的原点：left top</p>
+
+<div id="fenye">
+ 	
+            <a href="javascript:void(0)" class="left"><i></i>previous</a>
+            
+
+    
+            <a href="javascript:void(0)" class="right"><i></i>next</a>
+            
+ </div>
+:ET

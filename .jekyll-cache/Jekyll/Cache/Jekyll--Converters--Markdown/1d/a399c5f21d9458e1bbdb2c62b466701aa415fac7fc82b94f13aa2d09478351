@@ -1,0 +1,8 @@
+I"�<h2 id="bom-浏览器操作">BOM 浏览器操作</h2>
+<p>window对象 
+open();    <br />
+close();
+alert();
+prompt()
+confirm();</p>
+:ET

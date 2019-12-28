@@ -1,184 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-	<link rel="stylesheet" href="./css/1.css">
-	<style type="text/css">
-	
-		*{
-			margin: 0;
-			padding: 0;
-		}
-		body{
-            width: 100%;
-			height: 5000px;
-			background:url(./img/7.jpg); 
-            cursor:url('./img/2.ico'),auto;
+---
+title: 123
+haha: 这里可以随便写
+layout: index
+---
 
-		}
-        body::before {
-            content: '';
-            display: block;
-            width:100%;
-            height: 5650px;
-            background: #fff;
-            opacity: 0.1;
-            position: absolute;
-        }
-        #head{
-            width: 150px;
-            height: 150px;
-            border-radius:50%;
-            background: url(./img/5.jpg);
-            position: relative;
-            background-size: 100% 100%;
-            border-radius: 50%;
-            transition: all .6s;
-            margin: 5px auto;
-        }
-        #head:hover{
-            transform: rotate(360deg);
-        }
-        #name{
-            width: 300px;
-            height: 100px;
-            left: 250px;
-            top: 40px;
-            position: absolute;
-            font-family:华文行楷;
-            font-size: 50px;
-            transform: rotate(-20deg);
-           }
-
-       #nav{
-            font-size: 0;
-       	    position:absolute;
-       	    width: 680px;
-       	    height: 50px;
-       	    left: 37%;
-       	    top: 170px; 
-       }
-        li{
-        	width: 100px;
-        	height: 50px;
-        	display: inline-block;
-        	
-        	/*margin-left: 32px;*/
-            line-height: 50px;
-            /*border:1px solid black;*/
-            text-align: center;
-        	
-        }
-        a{
-            font-size: 25px;
-        	text-decoration: none;
-        	color:#363636;
-        }
-        a:hover{
-            font-size: 30px;
-            
-        }
-       /* #content{
-            position: absolute;
-            top: 260px;
-            left: 20%;
-            width: 60%;
-            height: 1500px;
-            border:2px solid black;
-        }*/
+{% for post in paginator.posts %}
+<div id="article">
+    <div id="article_img">
+        <a href="#" >
+                <img id="a0" src="{{post.picture}}">
+        </a>
+    </div>
+    <div id="article_content">
+                      <a href="#"><h1>{{post.title}}</h1></a>
+	                  <p>{{post.excerpt}}</p>
+	         <a id="read" href="{{post.url}}">阅读全文</a>
+	    </div>
+</div>
+{% endfor %}
 
 
-        ul li:nth-child(1){
-            border-bottom:2px solid #FFB6C1;
-            transition: all 1s;
-        }
-        ul li:nth-child(2){
-            border-bottom:2px solid #FFDEAD;
-            transition: all 1s;
-        }
-        ul li:nth-child(3){
-            border-bottom:2px solid #F0FFF0;
-            transition: all 1s;
-        }
-        ul li:nth-child(4){
-            border-bottom:2px solid #ADD8E6;
-            transition: all 1s;
-        }
-        ul li:nth-child(5){
-            border-bottom:2px solid #E6E6FA;
-            transition: all 1s;
-        }
+ <div id="fenye">
+ 	{% if paginator.previous_page_path %}
+            <a href="{{ paginator.previous_page_path }}" class="left"><i></i>previous</a>
+            {% else %}
+            <a href="javascript:void(0)" class="left"><i></i>previous</a>
+            {% endif %}
 
-        ul li:nth-child(1):hover{
-           background-color: #FFB6C1;
-        }
-        ul li:nth-child(2):hover{
-            background:#FFDEAD;
-        }
-        ul li:nth-child(3):hover{
-            background-color:#F0FFF0;
-        }
-        ul li:nth-child(4):hover{
-            background-color:#ADD8E6;
-        }
-        ul li:nth-child(5):hover{
-            background-color:#E6E6FA;
-        }
+    {% if paginator.next_page_path %}
+            <a href="{{ paginator.next_page_path }}" class="right"><i></i>next</a>
+            {% else %}
+            <a href="javascript:void(0)" class="right"><i></i>next</a>
+            {% endif %}
+ </div>
 
-        
 
-	</style>
-</head>
-<body>
-	<div>
-		<div id="head">
-		</div>
-        <div id="name">汪小疯BLOG</div>
-		<div id="nav">
-			<ul>
-				<li><a href="#">首页</a></li>
-				<li><a href="#">文章</a></li>
-				<li><a href="#">分类</a></li>
-				<li><a href="#">随笔</a></li>
-				<li><a href="#">留言</a></li>
-			</ul>
-		</div>
-		<div class="calendar-container">
-            <div class="calendar-header">
-    	        <div class="left btn">&lt;</div>
-    	        <div class="year"></div>
-    	        <div class="right btn">&gt;</div>
-    	    </div>
-            <div class="calendar-body">
-                <div class="week-row">
-                    <div class="week box">日</div>
-                    <div class="week box">一</div>
-                    <div class="week box">二</div>
-                    <div class="week box">三</div>
-                    <div class="week box">四</div>
-                    <div class="week box">五</div>
-                    <div class="week box">六</div>
-                </div>
-                <div class="day-rows">
-                    <!--日期的渲染的地方-->
-                </div> 
-            </div>
-        </div>
-        <!-- <div id="content"></div>
-       
-	</div> -->
-    <script type="text/javascript" src="./js/1.js"></script>
-    <script type="text/javascript">
-        setInterval(function(){
-            var str_c='';
-            for (var i = 0; i < 6; i++) {
-                var ran = Math.floor(Math.random()*10);
-                str_c+=ran;
-                }
-            document.getElementById('name').style.color='#'+str_c;
-        },1000);
-                    
-    </script>
-</body>
-</html>
+
+
+
+
+
+<!-- 
+<ul>
+	{% for post in site.posts %}
+	<li>
+		<a href="{{post.url}}">{{post.title}}</a>
+		<p>{{post.excerpt}}</p>
+	</li>
+	{% endfor %}
+
+</ul> -->
